@@ -1,6 +1,6 @@
 ﻿namespace FigureLibrary;
 
-public class TriangleVerifier : IShapeVerifier<Triangle>
+public class RightTriangleVerifier : IShapeVerifier<Triangle>
 {
     public bool Verify(Triangle shape)
     {

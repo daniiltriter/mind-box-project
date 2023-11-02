@@ -39,4 +39,26 @@ public class AreaCalculatorTests
         };
         Assert.Throws<ArgumentException>(() => AreaCalculator.CalculateArea(triangle));
     }
+
+    [Theory]
+    [InlineData(3, 4, 5)]
+    [InlineData(5, 12, 13)]
+    [InlineData(8, 15, 17)]
+    public void Right_Triangle_Checking_Is_Valid(double sideA, double sideB, double sideC)
+    {
+        // Arrange
+        var verifier = new RightTriangleVerifier();
+        var triangle = new Triangle()
+        {
+            SideA = sideA,
+            SideB = sideB,
+            SideC = sideC
+        };
+        
+        // Act
+        var isRightTriangle = verifier.Verify(triangle);
+
+        // Assert
+        isRightTriangle.Should().BeTrue();
+    }
 }

@@ -18,12 +18,7 @@ public class Triangle : IShape
         return Math.Sqrt(s * (s - SideA) * (s - SideB) * (s - SideC));
     }
 
-    public bool IsRightTriangle()
-    {
-        var sides = new[] { SideA, SideB, SideC };
-        Array.Sort(sides);
-        return Math.Pow(sides[0], 2) + Math.Pow(sides[1], 2) == Math.Pow(sides[2], 2);
-    }
+
     
     private static bool IsValidTriangle(double a, double b, double c)
     {
