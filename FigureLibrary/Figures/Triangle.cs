@@ -9,7 +9,7 @@ public class Triangle : IShape
     public double CalculateArea()
     {
         var isValid = IsValidTriangle(SideA, SideB, SideC);
-        if (isValid)
+        if (!isValid)
         {
             throw new ArgumentException("Invalid triangle side values.");
         }
@@ -27,8 +27,8 @@ public class Triangle : IShape
     
     private static bool IsValidTriangle(double a, double b, double c)
     {
-        bool hasNonNegativeSides = a > 0 && b > 0 && c > 0;
-        bool satisfiesTriangleInequality = a + b > c && a + c > b && b + c > a;
+        var hasNonNegativeSides = a > 0 && b > 0 && c > 0;
+        var satisfiesTriangleInequality = a + b > c && a + c > b && b + c > a;
 
         return hasNonNegativeSides && satisfiesTriangleInequality;
     }

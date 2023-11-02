@@ -1,8 +1,8 @@
 ﻿namespace FigureLibrary;
 
-public class AreaCalculator
+public static class AreaCalculator
 {
-    public double CalculateArea(IShape shape)
+    public static double CalculateArea(IShape shape)
     {
         return shape.CalculateArea();
     }
